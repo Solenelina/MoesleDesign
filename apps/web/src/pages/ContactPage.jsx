@@ -102,9 +102,11 @@ const ContactPage = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-muted to-background px-4 py-16 sm:py-20 md:py-24">
         <div className="container mx-auto max-w-4xl text-center">
+          {/* [MODIF CONTACT - TITRE PRINCIPAL] */}
           <h1 className="heading-font mb-6 text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
             Vous avez un projet de meuble sur mesure ?
           </h1>
+          {/* [MODIF CONTACT - TEXTE PRINCIPAL] */}
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
             Parlons-en ensemble. Je serais ravi de discuter de votre projet et de vous accompagner 
             dans sa réalisation.
@@ -119,11 +121,13 @@ const ContactPage = () => {
             {/* Contact Form */}
             <Card className="rounded-xl shadow-lg">
               <CardContent className="p-6 sm:p-8">
+                {/* [MODIF CONTACT - TITRE FORMULAIRE] */}
                 <h2 className="heading-font mb-6 text-2xl font-bold text-foreground sm:text-3xl">
                   Envoyez-moi un message
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
+                    {/* [MODIF CONTACT - LIBELLÉ CHAMP NOM] */}
                     <Label htmlFor="name" className="text-foreground font-medium mb-2 block">
                       Nom complet
                     </Label>
@@ -140,6 +144,7 @@ const ContactPage = () => {
                   </div>
 
                   <div>
+                    {/* [MODIF CONTACT - LIBELLÉ CHAMP EMAIL] */}
                     <Label htmlFor="email" className="text-foreground font-medium mb-2 block">
                       Email
                     </Label>
@@ -156,6 +161,7 @@ const ContactPage = () => {
                   </div>
 
                   <div>
+                    {/* [MODIF CONTACT - LIBELLÉ CHAMP MESSAGE] */}
                     <Label htmlFor="message" className="text-foreground font-medium mb-2 block">
                       Message
                     </Label>
@@ -187,6 +193,7 @@ const ContactPage = () => {
             <div className="space-y-8">
               <Card className="rounded-xl shadow-lg">
                 <CardContent className="p-6 sm:p-8">
+                  {/* [MODIF CONTACT - COORDONNÉES] L'email et le LinkedIn se modifient dans src/lib/site.js. */}
                   <h3 className="heading-font mb-6 text-2xl font-bold text-foreground">
                     Coordonnées
                   </h3>
@@ -228,6 +235,7 @@ const ContactPage = () => {
 
               <Card className="rounded-xl shadow-lg bg-primary text-primary-foreground">
                 <CardContent className="p-6 sm:p-8">
+                  {/* [MODIF CONTACT - ARGUMENTS RASSURANTS] Change ici le titre et les 4 points. */}
                   <h3 className="heading-font mb-4 text-2xl font-bold">
                     Pourquoi me contacter ?
                   </h3>

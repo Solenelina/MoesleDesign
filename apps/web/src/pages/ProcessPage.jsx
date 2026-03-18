@@ -3,6 +3,13 @@ import { Helmet } from 'react-helmet';
 import { Card, CardContent } from '@/components/ui/card.jsx';
 import { Phone, Home, Pencil, Settings, Hammer, CheckCircle } from 'lucide-react';
 const ProcessPage = () => {
+  /*
+   * [MODIF PROCESSUS - ÉTAPES]
+   * Chaque objet ci-dessous correspond à une étape affichée sur la page.
+   * - title = titre de l'étape
+   * - description = texte de l'étape
+   * Pour ajouter une étape, duplique un objet complet.
+   */
   const steps = [{
     number: 1,
     icon: Phone,
@@ -43,9 +50,11 @@ const ProcessPage = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-muted to-background px-4 py-16 sm:py-20 md:py-24">
         <div className="container mx-auto max-w-4xl text-center">
+          {/* [MODIF PROCESSUS - TITRE] */}
           <h1 className="heading-font mb-6 text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
             Mon processus créatif
           </h1>
+          {/* [MODIF PROCESSUS - SOUS-TITRE] */}
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
             Un accompagnement personnalisé en 6 étapes pour créer le meuble qu'il vous faut
           </p>
@@ -56,6 +65,7 @@ const ProcessPage = () => {
       <section className="px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-5xl">
           <div className="overflow-hidden rounded-2xl shadow-2xl">
+            {/* [MODIF PROCESSUS - IMAGE PRINCIPALE] Remplace l'URL du src pour changer l'image. */}
             <img src="https://images.unsplash.com/photo-1613523547236-f76d7652bacd" alt="Phase de conception et design de mobilier avec plans et croquis" className="h-64 w-full object-cover sm:h-80 md:h-96" />
           </div>
         </div>
@@ -99,6 +109,7 @@ const ProcessPage = () => {
       {/* Timeline Visualization */}
       <section className="bg-muted px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-4xl text-center">
+          {/* [MODIF PROCESSUS - CONCLUSION] */}
           <h2 className="heading-font mb-8 text-3xl font-bold text-foreground md:text-4xl">
             Un processus transparent et collaboratif
           </h2>

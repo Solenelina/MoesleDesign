@@ -7,6 +7,13 @@ import { Card, CardContent } from '@/components/ui/card.jsx';
 import { Home, Building2, Sparkles, MapPin } from 'lucide-react';
 
 const HomePage = () => {
+  /*
+   * [MODIF ACCUEIL - CARTES]
+   * Tu peux modifier ici les 3 cartes de la section "Est-ce fait pour moi ?".
+   * - title = le titre de la carte
+   * - description = le texte sous le titre
+   * Pour ajouter une nouvelle carte, duplique simplement un objet complet.
+   */
   const questions = [
     {
       icon: Home,
@@ -39,6 +46,7 @@ const HomePage = () => {
       <section className="relative flex min-h-[calc(100svh-4.5rem)] items-center justify-center overflow-hidden px-4 py-16 sm:min-h-[calc(100svh-5rem)] sm:py-20">
         <div 
           className="absolute inset-0 bg-cover bg-center"
+          // [MODIF ACCUEIL - IMAGE DE FOND] Remplace l'URL ici pour changer l'image principale.
           style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1699268092475-f7a45ce3fe2d)' }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
@@ -46,13 +54,16 @@ const HomePage = () => {
         
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <img 
+            // [MODIF ACCUEIL - LOGO] Remplace le src ici pour changer le logo affiché en haut.
             src="https://horizons-cdn.hostinger.com/22591d1d-ba76-423a-b800-205c2197f546/e924bbdc4067dcf2885c5a2fae4f5422.png" 
             alt="H.Moeslé Design logo"
             className="mx-auto mb-6 h-16 w-auto drop-shadow-2xl sm:mb-8 sm:h-20"
           />
+          {/* [MODIF ACCUEIL - TITRE PRINCIPAL] Change ce texte pour modifier le grand titre. */}
           <h1 className="heading-font mb-5 text-4xl font-bold text-white sm:text-5xl md:mb-6 md:text-7xl">
             Hansi Moeslé Design
           </h1>
+          {/* [MODIF ACCUEIL - SOUS-TITRE] Change ce texte pour modifier la phrase sous le titre. */}
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl md:text-2xl">
             Création de mobilier sur mesure et aménagement d'intérieur personnalisé au Pays Basque
           </p>
@@ -62,6 +73,7 @@ const HomePage = () => {
       {/* Philosophy Section */}
       <section className="bg-background px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-4xl">
+          {/* [MODIF ACCUEIL - PRÉSENTATION] Change ici le titre et les paragraphes de présentation. */}
           <h2 className="heading-font mb-6 text-center text-3xl font-bold text-foreground sm:mb-8 sm:text-4xl md:text-5xl">
             Une approche artisanale unique
           </h2>
@@ -83,9 +95,11 @@ const HomePage = () => {
       {/* Questions Section */}
       <section className="bg-muted px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-6xl">
+          {/* [MODIF ACCUEIL - TITRE SECTION CARTES] */}
           <h2 className="heading-font mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
             Est-ce fait pour moi ?
           </h2>
+          {/* [MODIF ACCUEIL - TEXTE SECTION CARTES] */}
           <p className="mx-auto mb-10 max-w-2xl text-center text-base text-muted-foreground sm:mb-12 sm:text-lg">
             Découvrez si mes services correspondent à vos besoins
           </p>
@@ -119,6 +133,7 @@ const HomePage = () => {
       {/* CTA Section */}
       <section className="bg-background px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-4xl text-center">
+          {/* [MODIF ACCUEIL - APPEL À L'ACTION] Change ici le titre et le texte du bloc final. */}
           <h2 className="heading-font mb-6 text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
             Prêt à donner vie à votre projet ?
           </h2>
@@ -138,6 +153,7 @@ const HomePage = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:text-left">
             <MapPin className="h-6 w-6 shrink-0" />
+            {/* [MODIF ACCUEIL - LOCALISATION] Change ici le texte de la bannière de localisation. */}
             <p className="text-base font-medium sm:text-lg">
               Basé au Pays Basque, Sud-Ouest France - Interventions dans toute la région
             </p>

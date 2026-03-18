@@ -8,6 +8,19 @@ const PortfolioPage = () => {
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
 
+  /*
+   * [MODIF PORTFOLIO - PREMIÈRE LISTE DE PROJETS]
+   * Pour ajouter un projet : duplique un objet complet.
+   * Dans chaque projet :
+   * - title = nom du projet
+   * - description = texte visible
+   * - media = photos/vidéos du projet
+   * Dans media :
+   * - type = 'image' ou 'video'
+   * - src = lien du média
+   * - alt = description de l'image
+   * - poster = image d'aperçu pour une vidéo
+   */
   const collectionStudio = [
     {
       title: 'Bibliothèque sur mesure',
@@ -110,6 +123,10 @@ const PortfolioPage = () => {
     }
   ];
 
+  /*
+   * [MODIF PORTFOLIO - DEUXIÈME LISTE DE PROJETS]
+   * Même logique que la première liste.
+   */
   const collectionHabitat = [
     {
       title: 'Bureau d\'angle ergonomique',
@@ -184,6 +201,7 @@ const PortfolioPage = () => {
     setIsViewerOpen(true);
   };
 
+  // [MODIF PORTFOLIO - AFFICHAGE DES CARTES] Cette fonction affiche chaque carte projet.
   const renderProjectCard = (project, index, extraClassName = '') => {
     const cover = project.media[0];
     return (
@@ -242,9 +260,11 @@ const PortfolioPage = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-muted to-background px-4 py-16 sm:py-20 md:py-24">
         <div className="container mx-auto max-w-4xl text-center">
+          {/* [MODIF PORTFOLIO - TITRE PRINCIPAL] */}
           <h1 className="heading-font mb-6 text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
             Portfolio
           </h1>
+          {/* [MODIF PORTFOLIO - TEXTE D'INTRODUCTION] */}
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
             Découvrez ici quelques exemples de mes réalisations. Chaque projet est pensé pour 
             répondre à un besoin précis et s'intégrer harmonieusement dans son environnement.
@@ -256,9 +276,11 @@ const PortfolioPage = () => {
       <section className="px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-7xl">
           <div className="mb-8 flex flex-col gap-2 sm:mb-10">
+            {/* [MODIF PORTFOLIO - TITRE LISTE 1] */}
             <h2 className="heading-font text-3xl font-bold text-foreground sm:text-4xl">
               Sélection de projets
             </h2>
+            {/* [MODIF PORTFOLIO - TEXTE LISTE 1] */}
             <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               Une bibliothèque de projets cliquables, avec plusieurs vues (photos et vidéos) pour chaque réalisation.
             </p>
@@ -276,9 +298,11 @@ const PortfolioPage = () => {
       <section className="bg-muted px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-7xl">
           <div className="mb-8 flex flex-col gap-2 sm:mb-10">
+            {/* [MODIF PORTFOLIO - TITRE LISTE 2] */}
             <h2 className="heading-font text-3xl font-bold text-foreground sm:text-4xl">
               Projets résidentiels
             </h2>
+            {/* [MODIF PORTFOLIO - TEXTE LISTE 2] */}
             <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               Des projets résidentiels pensés sur mesure, chacun avec une galerie dédiée pour voir les détails et les différentes étapes.
             </p>
@@ -293,6 +317,7 @@ const PortfolioPage = () => {
       <Dialog open={isViewerOpen} onOpenChange={setIsViewerOpen}>
         <DialogContent className="w-[95vw] max-w-6xl overflow-hidden border-border/60 p-0">
           {selectedProject && (
+            // [MODIF PORTFOLIO - FENÊTRE PROJET] Cette fenêtre s'ouvre quand tu cliques sur un projet.
             <div className="grid grid-cols-1 md:grid-cols-5">
               <div className="md:col-span-3">
                 <div className="aspect-[4/3] w-full bg-black/5">
@@ -368,6 +393,7 @@ const PortfolioPage = () => {
       {/* CTA Section */}
       <section className="bg-background px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-4xl text-center">
+          {/* [MODIF PORTFOLIO - BLOC FINAL] */}
           <h2 className="heading-font mb-6 text-3xl font-bold text-foreground sm:text-4xl">
             Votre projet mérite une attention unique
           </h2>

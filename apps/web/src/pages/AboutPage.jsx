@@ -5,6 +5,13 @@ import { Card, CardContent } from '@/components/ui/card.jsx';
 import { Palette, Box, Pencil, Lightbulb } from 'lucide-react';
 
 const AboutPage = () => {
+  /*
+   * [MODIF À PROPOS - CARTES EXPERTISE]
+   * Tu peux modifier ici les cartes de la section "Mon expertise".
+   * - title = titre de la carte
+   * - description = texte de la carte
+   * Pour changer l'icône, il faut remplacer la propriété icon par une autre icône importée.
+   */
   const expertise = [
     {
       icon: Palette,
@@ -41,9 +48,11 @@ const AboutPage = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-muted to-background px-4 py-16 sm:py-20 md:py-24">
         <div className="container mx-auto max-w-4xl text-center">
+          {/* [MODIF À PROPOS - TITRE PRINCIPAL] */}
           <h1 className="heading-font mb-6 text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
             À propos
           </h1>
+          {/* [MODIF À PROPOS - SOUS-TITRE PRINCIPAL] */}
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
             Une passion pour la création et l'optimisation des espaces
           </p>
@@ -55,6 +64,7 @@ const AboutPage = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
             <div>
+              {/* [MODIF À PROPOS - PRÉSENTATION PERSONNELLE] Change ici le titre et les paragraphes. */}
               <h2 className="heading-font mb-6 text-3xl font-bold text-foreground sm:text-4xl">
                 Ma passion pour le mobilier
               </h2>
@@ -78,6 +88,7 @@ const AboutPage = () => {
             </div>
             <div className="overflow-hidden rounded-2xl shadow-2xl">
               <img 
+                // [MODIF À PROPOS - IMAGE 1] Remplace le src pour changer l'image.
                 src="https://images.unsplash.com/photo-1688728981543-df24d24d0116" 
                 alt="Atelier de design de mobilier avec outils et matériaux de création"
                 className="h-72 w-full object-cover sm:h-80 md:h-full"
@@ -90,6 +101,7 @@ const AboutPage = () => {
       {/* Expertise Cards */}
       <section className="bg-muted px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-6xl">
+          {/* [MODIF À PROPOS - TITRE SECTION EXPERTISE] */}
           <h2 className="heading-font mb-10 text-center text-3xl font-bold text-foreground sm:mb-12 sm:text-4xl">
             Mon expertise
           </h2>
@@ -125,12 +137,14 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
             <div className="order-2 overflow-hidden rounded-2xl shadow-2xl md:order-1">
               <img 
+                // [MODIF À PROPOS - IMAGE 2] Remplace le src pour changer l'image.
                 src="https://images.unsplash.com/photo-1563174378-62b20fb3298d" 
                 alt="Intérieur moderne avec mobilier design et aménagement personnalisé"
                 className="h-72 w-full object-cover sm:h-80 md:h-full"
               />
             </div>
             <div className="order-1 md:order-2">
+              {/* [MODIF À PROPOS - DEUXIÈME SECTION TEXTE] Change ici le titre et les paragraphes. */}
               <h2 className="heading-font mb-6 text-3xl font-bold text-foreground sm:text-4xl">
                 Une approche unique
               </h2>
