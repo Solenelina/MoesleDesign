@@ -8,6 +8,12 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
+  /*
+   * [MODIF HEADER - MENU DU HAUT]
+   * Tu peux modifier ici les textes du menu.
+   * - path = le lien de la page
+   * - label = le texte affiché dans le menu
+   */
   const navLinks = [
     { path: '/', label: 'Hansi Moeslé Design' },
     { path: '/processus', label: 'Mon processus créatif' },
@@ -25,6 +31,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center min-w-0">
             <img 
+              // [MODIF HEADER - LOGO] Remplace ce src pour changer le logo du menu du haut.
               src="https://horizons-cdn.hostinger.com/22591d1d-ba76-423a-b800-205c2197f546/e924bbdc4067dcf2885c5a2fae4f5422.png" 
               alt="H.Moeslé Design - Designer de mobilier sur mesure"
               className="h-10 w-auto sm:h-12"

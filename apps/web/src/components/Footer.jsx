@@ -14,10 +14,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="max-w-sm">
             <img 
+              // [MODIF FOOTER - LOGO] Remplace ce src pour changer le logo du bas de page.
               src="https://horizons-cdn.hostinger.com/22591d1d-ba76-423a-b800-205c2197f546/e924bbdc4067dcf2885c5a2fae4f5422.png" 
               alt="H.Moeslé Design"
               className="h-10 w-auto mb-4"
             />
+            {/* [MODIF FOOTER - TEXTE DE PRÉSENTATION] */}
             <p className="text-sm text-muted-foreground">
               Design de mobilier sur mesure et aménagement d'intérieur personnalisé
             </p>
@@ -28,12 +30,14 @@ const Footer = () => {
             <span className="font-semibold text-foreground mb-3 block">Localisation</span>
             <div className="flex items-start gap-2 text-sm text-muted-foreground">
               <MapPin className="h-4 w-4 mt-0.5 text-primary" />
+              {/* [MODIF FOOTER - LOCALISATION] */}
               <span>Pays Basque, Sud-Ouest France</span>
             </div>
           </div>
 
           {/* Contact */}
           <div>
+            {/* [MODIF FOOTER - CONTACT] L'email et LinkedIn viennent de src/lib/site.js. */}
             <span className="font-semibold text-foreground mb-3 block">Contact</span>
             <div className="flex flex-col gap-3">
               <a 
