@@ -9,7 +9,7 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { path: '/', label: 'Accueil' },
+    { path: '/', label: 'Hansi Moeslé Design' },
     { path: '/processus', label: 'Mon processus créatif' },
     { path: '/apropos', label: 'À propos' },
     { path: '/portfolio', label: 'Portfolio' },

@@ -1,38 +1,38 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Card, CardContent } from '@/components/ui/card.jsx';
-import { MessageCircle, Home, Pencil, Settings, Hammer, CheckCircle } from 'lucide-react';
+import { Phone, Home, Pencil, Settings, Hammer, CheckCircle } from 'lucide-react';
 const ProcessPage = () => {
   const steps = [{
     number: 1,
-    icon: MessageCircle,
+    icon: Phone,
     title: "Premier contact",
-    description: "Échange à distance pour comprendre vos besoins, vos envies et les contraintes de votre espace. Nous discutons de votre vision et des possibilités."
+    description: "Tout commence par un échange à distance, sans engagement. Je prends le temps d'écouter votre projet, vos envies et vos contraintes pour voir ensemble comment je peux y répondre."
   }, {
     number: 2,
     icon: Home,
     title: "Rencontre sur place",
-    description: "Visite de votre espace pour prendre les mesures précises, analyser l'environnement et affiner ensemble le projet. C'est le moment de partager vos inspirations."
+    description: "Je me déplace chez vous pour voir l'espace, prendre les mesures précises et mieux cerner le contexte. C'est souvent à ce stade que le projet prend vraiment forme."
   }, {
     number: 3,
     icon: Pencil,
     title: "Création des propositions",
-    description: "Réalisation de croquis et de plans 3D détaillés pour visualiser le meuble dans votre espace. Vous pouvez voir le résultat avant même la fabrication."
+    description: "Je réalise des croquis et des plans 3D pour vous permettre de vous projeter dans le résultat final avant tout engagement. C'est aussi l'étape où on ajuste, on affine, jusqu'à ce que la proposition vous corresponde vraiment."
   }, {
     number: 4,
     icon: Settings,
     title: "Ajustements et choix des matériaux",
-    description: "Affinage des détails, sélection des matériaux, des finitions et des couleurs. Chaque élément est choisi pour correspondre parfaitement à vos attentes."
+    description: "On finalise ensemble les détails : matériaux, finitions, couleurs, dimensions. Je vous guide dans les choix en fonction de vos goûts et de votre budget, mais c'est vous qui avez le dernier mot."
   }, {
     number: 5,
     icon: Hammer,
     title: "Fabrication",
-    description: "Réalisation du meuble par des artisans qualifiés avec un suivi rigoureux de la qualité. Chaque pièce est fabriquée avec soin et précision."
+    description: "Selon le type de meuble et les matériaux retenus, je fabrique moi-même ou je m'appuie sur des artisans de confiance. Pour les ouvrages en bois, je travaille en direct. Pour des matériaux plus spécifiques (métal, verre, tapisserie…), je fais appel à des spécialistes. Dans tous les cas, je reste l'interlocuteur principal et suis le projet jusqu'à la livraison."
   }, {
     number: 6,
     icon: CheckCircle,
     title: "Accompagnement jusqu'à l'installation",
-    description: "Livraison et installation du meuble dans votre espace. Je m'assure que tout est parfait et que vous êtes pleinement satisfait du résultat."
+    description: "Je livre et installe le meuble chez vous, et je m'assure que tout est en place comme prévu. Votre satisfaction en fin de projet, c'est ce qui compte."
   }];
   return <>
       <Helmet>

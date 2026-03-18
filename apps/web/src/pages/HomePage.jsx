@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
 import { Card, CardContent } from '@/components/ui/card.jsx';
-import { Home, TrendingUp, Sparkles, MapPin } from 'lucide-react';
+import { Home, Building2, Sparkles, MapPin } from 'lucide-react';
 
 const HomePage = () => {
   const questions = [
@@ -14,9 +14,9 @@ const HomePage = () => {
       description: "Vous souhaitez maximiser l'espace et créer un intérieur fonctionnel et esthétique qui vous ressemble ?"
     },
     {
-      icon: TrendingUp,
-      title: "Valoriser mon bien locatif",
-      description: "Vous voulez augmenter l'attractivité de votre location avec du mobilier sur mesure et un design soigné ?"
+      icon: Building2,
+      title: "Équiper mon espace professionnel",
+      description: "Vous cherchez du mobilier sur mesure et fonctionnel pour créer un espace de travail unique et accueillant ?"
     },
     {
       icon: Sparkles,
