@@ -48,12 +48,12 @@ const PortfolioPage = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-gradient-to-br from-muted to-background">
+      <section className="relative bg-gradient-to-br from-muted to-background px-4 py-16 sm:py-20 md:py-24">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="heading-font text-5xl md:text-6xl font-bold text-foreground mb-6">
+          <h1 className="heading-font mb-6 text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
             Portfolio
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
             Découvrez ici quelques exemples de mes réalisations. Chaque projet est pensé pour 
             répondre à un besoin précis et s'intégrer harmonieusement dans son environnement.
           </p>
@@ -61,9 +61,9 @@ const PortfolioPage = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-16 px-4">
+      <section className="px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {projects.map((project, index) => (
               <Card 
                 key={index}
@@ -73,12 +73,12 @@ const PortfolioPage = () => {
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-110 sm:h-64"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="heading-font text-2xl font-semibold text-foreground mb-3">
+                  <h3 className="heading-font mb-3 text-xl font-semibold text-foreground sm:text-2xl">
                     {project.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -92,12 +92,12 @@ const PortfolioPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-muted">
+      <section className="bg-muted px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="heading-font text-4xl font-bold text-foreground mb-6">
+          <h2 className="heading-font mb-6 text-3xl font-bold text-foreground sm:text-4xl">
             Votre projet mérite une attention unique
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="mx-auto mb-8 max-w-2xl text-base text-muted-foreground sm:text-lg">
             Chaque réalisation commence par une conversation. Parlons de votre vision et 
             créons ensemble le meuble parfait pour votre espace.
           </p>

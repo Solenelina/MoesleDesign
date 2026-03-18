@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Linkedin, MapPin } from 'lucide-react';
+import { SITE_CONTACT } from '@/lib/site.js';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,9 +10,9 @@ const Footer = () => {
   return (
     <footer className="bg-muted border-t border-border mt-16">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
           {/* Brand */}
-          <div>
+          <div className="max-w-sm">
             <img 
               src="https://horizons-cdn.hostinger.com/22591d1d-ba76-423a-b800-205c2197f546/e924bbdc4067dcf2885c5a2fae4f5422.png" 
               alt="H.Moeslé Design"
@@ -36,20 +37,20 @@ const Footer = () => {
             <span className="font-semibold text-foreground mb-3 block">Contact</span>
             <div className="flex flex-col gap-3">
               <a 
-                href="mailto:contact@hmoesledesign.com" 
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                href={`mailto:${SITE_CONTACT.email}`}
+                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                <Mail className="h-4 w-4" />
-                <span>contact@hmoesledesign.com</span>
+                <Mail className="mt-0.5 h-4 w-4 shrink-0" />
+                <span className="break-all">{SITE_CONTACT.email}</span>
               </a>
               <a 
-                href="https://www.linkedin.com/in/hansi-moesle" 
+                href={SITE_CONTACT.linkedinUrl}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                <Linkedin className="h-4 w-4" />
-                <span>LinkedIn</span>
+                <Linkedin className="mt-0.5 h-4 w-4 shrink-0" />
+                <span className="break-all">{SITE_CONTACT.linkedinLabel}</span>
               </a>
             </div>
           </div>

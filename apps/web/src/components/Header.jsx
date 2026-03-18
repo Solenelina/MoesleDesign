@@ -20,14 +20,14 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-border">
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <nav className="container mx-auto px-4 py-3 md:py-4">
+        <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center min-w-0">
             <img 
               src="https://horizons-cdn.hostinger.com/22591d1d-ba76-423a-b800-205c2197f546/e924bbdc4067dcf2885c5a2fae4f5422.png" 
               alt="H.Moeslé Design - Designer de mobilier sur mesure"
-              className="h-12 w-auto"
+              className="h-10 w-auto sm:h-12"
             />
           </Link>
 
@@ -52,8 +52,10 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden shrink-0"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
@@ -61,15 +63,15 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden mt-4 border-t border-border pt-4">
+            <div className="flex flex-col gap-2 rounded-2xl bg-muted/70 p-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isActive(link.path) ? 'text-primary' : 'text-foreground'
+                  className={`rounded-xl px-4 py-3 text-sm font-medium transition-colors hover:text-primary ${
+                    isActive(link.path) ? 'bg-background text-primary shadow-sm' : 'text-foreground'
                   }`}
                 >
                   {link.label}

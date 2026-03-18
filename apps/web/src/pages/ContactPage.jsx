@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { Card, CardContent } from '@/components/ui/card.jsx';
 import { Mail, Linkedin, CheckCircle, AlertCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { SITE_CONTACT } from '@/lib/site.js';
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -99,12 +100,12 @@ const ContactPage = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-gradient-to-br from-muted to-background">
+      <section className="relative bg-gradient-to-br from-muted to-background px-4 py-16 sm:py-20 md:py-24">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="heading-font text-5xl md:text-6xl font-bold text-foreground mb-6">
+          <h1 className="heading-font mb-6 text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
             Vous avez un projet de meuble sur mesure ?
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
             Parlons-en ensemble. Je serais ravi de discuter de votre projet et de vous accompagner 
             dans sa réalisation.
           </p>
@@ -112,13 +113,13 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-4">
+      <section className="px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
             {/* Contact Form */}
             <Card className="rounded-xl shadow-lg">
-              <CardContent className="p-8">
-                <h2 className="heading-font text-3xl font-bold text-foreground mb-6">
+              <CardContent className="p-6 sm:p-8">
+                <h2 className="heading-font mb-6 text-2xl font-bold text-foreground sm:text-3xl">
                   Envoyez-moi un message
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -173,7 +174,7 @@ const ContactPage = () => {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full text-lg"
+                    className="w-full text-base sm:text-lg"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
@@ -185,8 +186,8 @@ const ContactPage = () => {
             {/* Contact Info */}
             <div className="space-y-8">
               <Card className="rounded-xl shadow-lg">
-                <CardContent className="p-8">
-                  <h3 className="heading-font text-2xl font-bold text-foreground mb-6">
+                <CardContent className="p-6 sm:p-8">
+                  <h3 className="heading-font mb-6 text-2xl font-bold text-foreground">
                     Coordonnées
                   </h3>
                   <div className="space-y-6">
@@ -197,10 +198,10 @@ const ContactPage = () => {
                       <div>
                         <p className="font-medium text-foreground mb-1">Email</p>
                         <a 
-                          href="mailto:contact@hmoesledesign.com"
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          href={`mailto:${SITE_CONTACT.email}`}
+                          className="break-all text-muted-foreground transition-colors hover:text-primary"
                         >
-                          contact@hmoesledesign.com
+                          {SITE_CONTACT.email}
                         </a>
                       </div>
                     </div>
@@ -212,12 +213,12 @@ const ContactPage = () => {
                       <div>
                         <p className="font-medium text-foreground mb-1">LinkedIn</p>
                         <a 
-                          href="https://www.linkedin.com/in/hansi-moesle"
+                          href={SITE_CONTACT.linkedinUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="break-all text-muted-foreground transition-colors hover:text-primary"
                         >
-                          Hansi Moeslé
+                          {SITE_CONTACT.linkedinLabel}
                         </a>
                       </div>
                     </div>
@@ -226,8 +227,8 @@ const ContactPage = () => {
               </Card>
 
               <Card className="rounded-xl shadow-lg bg-primary text-primary-foreground">
-                <CardContent className="p-8">
-                  <h3 className="heading-font text-2xl font-bold mb-4">
+                <CardContent className="p-6 sm:p-8">
+                  <h3 className="heading-font mb-4 text-2xl font-bold">
                     Pourquoi me contacter ?
                   </h3>
                   <ul className="space-y-3">

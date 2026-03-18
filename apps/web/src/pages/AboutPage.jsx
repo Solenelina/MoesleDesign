@@ -39,26 +39,26 @@ const AboutPage = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-gradient-to-br from-muted to-background">
+      <section className="relative bg-gradient-to-br from-muted to-background px-4 py-16 sm:py-20 md:py-24">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="heading-font text-5xl md:text-6xl font-bold text-foreground mb-6">
+          <h1 className="heading-font mb-6 text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
             À propos
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
             Une passion pour la création et l'optimisation des espaces
           </p>
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="py-16 px-4">
+      <section className="px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
             <div>
-              <h2 className="heading-font text-4xl font-bold text-foreground mb-6">
+              <h2 className="heading-font mb-6 text-3xl font-bold text-foreground sm:text-4xl">
                 Ma passion pour le mobilier
               </h2>
-              <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+              <div className="space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 <p>
                   Depuis toujours, je suis fasciné par la manière dont un meuble peut transformer 
                   un espace et améliorer notre quotidien. Cette passion m'a naturellement conduit 
@@ -76,11 +76,11 @@ const AboutPage = () => {
                 </p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="overflow-hidden rounded-2xl shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1688728981543-df24d24d0116" 
                 alt="Atelier de design de mobilier avec outils et matériaux de création"
-                className="w-full h-full object-cover"
+                className="h-72 w-full object-cover sm:h-80 md:h-full"
               />
             </div>
           </div>
@@ -88,12 +88,12 @@ const AboutPage = () => {
       </section>
 
       {/* Expertise Cards */}
-      <section className="py-16 px-4 bg-muted">
+      <section className="bg-muted px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="heading-font text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="heading-font mb-10 text-center text-3xl font-bold text-foreground sm:mb-12 sm:text-4xl">
             Mon expertise
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
             {expertise.map((item, index) => {
               const Icon = item.icon;
               return (
@@ -101,11 +101,11 @@ const AboutPage = () => {
                   key={index}
                   className="rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
-                  <CardContent className="p-8">
+                  <CardContent className="p-6 sm:p-8">
                     <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-6">
                       <Icon className="h-7 w-7 text-primary" />
                     </div>
-                    <h3 className="heading-font text-2xl font-semibold text-foreground mb-4">
+                    <h3 className="heading-font mb-4 text-xl font-semibold text-foreground sm:text-2xl">
                       {item.title}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
@@ -120,21 +120,21 @@ const AboutPage = () => {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-16 px-4">
+      <section className="px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl order-2 md:order-1">
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+            <div className="order-2 overflow-hidden rounded-2xl shadow-2xl md:order-1">
               <img 
                 src="https://images.unsplash.com/photo-1563174378-62b20fb3298d" 
                 alt="Intérieur moderne avec mobilier design et aménagement personnalisé"
-                className="w-full h-full object-cover"
+                className="h-72 w-full object-cover sm:h-80 md:h-full"
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="heading-font text-4xl font-bold text-foreground mb-6">
+              <h2 className="heading-font mb-6 text-3xl font-bold text-foreground sm:text-4xl">
                 Une approche unique
               </h2>
-              <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+              <div className="space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 <p>
                   Je ne crée pas simplement des meubles, je conçois des solutions qui s'intègrent 
                   harmonieusement dans votre vie. Chaque projet commence par une écoute attentive 
