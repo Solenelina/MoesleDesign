@@ -61,16 +61,6 @@ const ProcessPage = () => {
         </div>
       </section>
 
-      {/* Process Image */}
-      <section className="px-4 py-14 sm:py-16">
-        <div className="container mx-auto max-w-5xl">
-          <div className="overflow-hidden rounded-2xl shadow-2xl">
-            {/* [MODIF PROCESSUS - IMAGE PRINCIPALE] Remplace l'URL du src pour changer l'image. */}
-            <img src="https://images.unsplash.com/photo-1613523547236-f76d7652bacd" alt="Phase de conception et design de mobilier avec plans et croquis" className="h-64 w-full object-cover sm:h-80 md:h-96" />
-          </div>
-        </div>
-      </section>
-
       {/* Steps Section */}
       <section className="bg-background px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-5xl">

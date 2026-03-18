@@ -74,7 +74,7 @@ const HomePage = () => {
       <section className="bg-background px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-4xl">
           {/* [MODIF ACCUEIL - PRÉSENTATION] Change ici le titre et les paragraphes de présentation. */}
-          <h2 className="heading-font mb-6 text-center text-3xl font-bold text-foreground sm:mb-8 sm:text-4xl md:text-5xl">
+          <h2 className="heading-font mb-6 text-center text-3xl font-bold text-foreground sm:mb-8 sm:text-4xl md:text-4xl">
             Une approche artisanale unique
           </h2>
           <div className="prose prose-lg max-w-none text-muted-foreground">
@@ -94,9 +94,9 @@ const HomePage = () => {
 
       {/* Questions Section */}
       <section className="bg-muted px-4 py-14 sm:py-16">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-9xl">
           {/* [MODIF ACCUEIL - TITRE SECTION CARTES] */}
-          <h2 className="heading-font mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
+          <h2 className="heading-font mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl md:text-4xl">
             Est-ce fait pour moi ?
           </h2>
           {/* [MODIF ACCUEIL - TEXTE SECTION CARTES] */}
