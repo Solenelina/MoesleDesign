@@ -1,247 +1,108 @@
 
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Card, CardContent } from '@/components/ui/card.jsx';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog.jsx';
 const PortfolioPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
 
-  /*
-   * [MODIF PORTFOLIO - PREMIÈRE LISTE DE PROJETS]
-   * Pour ajouter un projet : duplique un objet complet.
-   * Dans chaque projet :
-   * - title = nom du projet
-   * - description = texte visible
-   * - media = photos/vidéos du projet
-   * Dans media :
-   * - type = 'image' ou 'video'
-   * - src = lien du média
-   * - alt = description de l'image
-   * - poster = image d'aperçu pour une vidéo
-   */
-  const collectionStudio = [
+  const portfolioProjects = [
     {
-      title: 'Bibliothèque sur mesure',
-      description: 'Bibliothèque murale conçue pour optimiser un espace restreint tout en créant un point focal élégant dans le salon.',
+      title: 'Enfilade en noyer et chêne',
+      description:
+        'Conception d\'une enfilade de salon qui combine noyer foncé et chêne clair. Le projet met l\'accent sur les volumes, la finesse des pieds métalliques et une façade graphique qui structure visuellement la pièce.',
       media: [
         {
           type: 'image',
           src: 'https://images.unsplash.com/photo-1687075196974-ea71a55cc9f8',
-          alt: 'Bibliothèque sur mesure dans un salon contemporain'
+          alt: 'Enfilade en noyer et chene dans un salon lumineux'
         },
         {
           type: 'image',
           src: 'https://images.unsplash.com/photo-1643949914877-b20f30792c1e',
-          alt: 'Détail de rangement intégré dans une bibliothèque sur mesure'
-        }
-      ]
-    },
-    {
-      title: 'Table basse contemporaine',
-      description: 'Table basse aux lignes épurées, alliant bois massif et métal pour un style industriel raffiné.',
-      media: [
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1652346080508-e2a6b7298450',
-          alt: 'Table basse contemporaine en bois et metal'
-        },
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1549187774-b4e9b0445b41',
-          alt: 'Finition de table basse et assemblage des materiaux'
-        }
-      ]
-    },
-    {
-      title: 'Meuble TV intégré',
-      description: 'Meuble TV sur mesure intégrant rangements et câblage invisible pour un rendu minimaliste et fonctionnel.',
-      media: [
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1643949914877-b20f30792c1e',
-          alt: 'Meuble TV integre dans un sejour'
-        },
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1688728981543-df24d24d0116',
-          alt: 'Vue detaillee des rangements du meuble TV'
-        }
-      ]
-    },
-    {
-      title: 'Atelier en action',
-      description: 'Un aperçu du travail en atelier : préparation, ajustements et finitions avant installation.',
-      media: [
-        {
-          type: 'video',
-          src: 'https://cdn.coverr.co/videos/coverr-carpenter-using-power-tools-1579/1080p.mp4',
-          poster: 'https://images.unsplash.com/photo-1613523547236-f76d7652bacd',
-          alt: 'Travail en atelier sur meuble sur mesure'
-        },
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1613523547236-f76d7652bacd',
-          alt: 'Espace atelier avec outils et plans'
-        }
-      ]
-    },
-    {
-      title: 'Détails de finitions',
-      description: 'Zoom sur les assemblages, les chants et les finitions pour garantir un rendu propre et durable.',
-      media: [
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1549187774-b4e9b0445b41',
-          alt: 'Detail de finition sur une piece en bois'
-        },
-        {
-          type: 'video',
-          src: 'https://cdn.coverr.co/videos/coverr-man-measuring-wood-1576/1080p.mp4',
-          poster: 'https://images.unsplash.com/photo-1549187774-b4e9b0445b41',
-          alt: 'Controle des cotes et finitions avant pose'
-        }
-      ]
-    },
-    {
-      title: 'Prise de cotes et préparation',
-      description: 'Mesures, vérifications et préparation des pièces avant la phase de fabrication.',
-      media: [
-        {
-          type: 'video',
-          src: 'https://cdn.coverr.co/videos/coverr-man-measuring-wood-1576/1080p.mp4',
-          poster: 'https://images.unsplash.com/photo-1549187774-b4e9b0445b41',
-          alt: 'Prise de cotes en atelier'
-        },
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1652346080508-e2a6b7298450',
-          alt: 'Preparation des elements avant fabrication'
-        }
-      ]
-    }
-  ];
-
-  /*
-   * [MODIF PORTFOLIO - DEUXIÈME LISTE DE PROJETS]
-   * Même logique que la première liste.
-   */
-  const collectionHabitat = [
-    {
-      title: 'Bureau d\'angle ergonomique',
-      description: 'Bureau sur mesure optimisant un angle difficile, avec rangements intelligents et finitions haut de gamme.',
-      media: [
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1613523547236-f76d7652bacd',
-          alt: 'Bureau d angle sur mesure dans un espace de travail'
-        },
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1688728981543-df24d24d0116',
-          alt: 'Vue detaillee des rangements du bureau sur mesure'
-        }
-      ]
-    },
-    {
-      title: 'Étagères murales design',
-      description: 'Système d\'étagères modulables créant une composition graphique unique tout en offrant un rangement pratique.',
-      media: [
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1688728981543-df24d24d0116',
-          alt: 'Etagere murale design dans un interieur lumineux'
+          alt: 'Meuble TV bas assorti au projet principal'
         },
         {
           type: 'image',
           src: 'https://images.unsplash.com/photo-1699268092475-f7a45ce3fe2d',
-          alt: 'Composition graphique d etageres sur un mur'
-        }
-      ]
-    },
-    {
-      title: 'Aménagement chambre',
-      description: 'Tête de lit avec rangements intégrés et tables de chevet assorties pour maximiser l\'espace dans une chambre moderne.',
-      media: [
-        {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1699268092475-f7a45ce3fe2d',
-          alt: 'Amenagement de chambre avec tete de lit integree'
+          alt: 'Console basse en bois clair avec rangements tresses'
         },
         {
           type: 'image',
-          src: 'https://images.unsplash.com/photo-1643949914877-b20f30792c1e',
-          alt: 'Detail des rangements sur mesure en chambre'
+          src: 'https://images.unsplash.com/photo-1688728981543-df24d24d0116',
+          alt: 'Buffet aux motifs geometriques sur facade'
         }
       ]
     },
     {
-      title: 'Installation finale',
-      description: 'Mise en place sur site et derniers réglages pour un résultat parfaitement intégré à l\'espace.',
+      title: 'Bibliothèque d\'atelier et pose finale',
+      description:
+        'Réalisation d\'une bibliothèque murale pensée pour un espace de travail polyvalent. Le projet inclut la préparation en atelier, des ajustements sur site et une finition mate durable adaptée à un usage quotidien.',
       media: [
+        {
+          type: 'image',
+          src: 'https://images.unsplash.com/photo-1613523547236-f76d7652bacd',
+          alt: 'Bibliotheque sur mesure dans un espace de travail'
+        },
+        {
+          type: 'image',
+          src: 'https://images.unsplash.com/photo-1549187774-b4e9b0445b41',
+          alt: 'Detail de finition bois lors de l assemblage'
+        },
         {
           type: 'video',
           src: 'https://cdn.coverr.co/videos/coverr-carpenter-at-workshop-1578/1080p.mp4',
           poster: 'https://images.unsplash.com/photo-1688728981543-df24d24d0116',
-          alt: 'Phase d installation d un meuble sur mesure'
+          alt: 'Pose finale sur site du mobilier'
         },
         {
           type: 'image',
-          src: 'https://images.unsplash.com/photo-1613523547236-f76d7652bacd',
-          alt: 'Resultat final apres installation'
+          src: 'https://images.unsplash.com/photo-1688728981543-df24d24d0116',
+          alt: 'Resultat final de la bibliotheque apres installation'
         }
       ]
     }
   ];
 
-  const openProject = (project) => {
+  const openMedia = (project, mediaIndex) => {
     setSelectedProject(project);
-    setActiveMediaIndex(0);
+    setActiveMediaIndex(mediaIndex);
     setIsViewerOpen(true);
   };
 
-  // [MODIF PORTFOLIO - AFFICHAGE DES CARTES] Cette fonction affiche chaque carte projet.
-  const renderProjectCard = (project, index, extraClassName = '') => {
-    const cover = project.media[0];
+  const renderMediaTile = (project, media, mediaIndex, className) => {
     return (
-      <Card
-        key={`${project.title}-${index}`}
-        className={`group cursor-pointer overflow-hidden rounded-xl border border-border/60 shadow-lg transition-all duration-300 hover:shadow-2xl ${extraClassName}`}
-        onClick={() => openProject(project)}
+      <button
+        key={`${project.title}-${mediaIndex}`}
+        type="button"
+        onClick={() => openMedia(project, mediaIndex)}
+        className={`group relative overflow-hidden rounded-xl border border-border/60 bg-background text-left shadow-md transition-all duration-300 hover:shadow-xl ${className}`}
       >
-        <div className="relative overflow-hidden">
-          {cover.type === 'video' ? (
+        {media.type === 'video' ? (
+          <>
             <video
-              className="h-60 w-full object-cover sm:h-64"
+              className="h-full w-full object-cover"
               muted
               playsInline
               preload="metadata"
-              poster={cover.poster}
+              poster={media.poster}
             >
-              <source src={cover.src} type="video/mp4" />
+              <source src={media.src} type="video/mp4" />
             </video>
-          ) : (
-            <img
-              src={cover.src}
-              alt={cover.alt || project.title}
-              className="h-60 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-64"
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          <p className="absolute bottom-3 left-3 rounded-full bg-black/60 px-2.5 py-1 text-xs font-medium text-white">
-            {project.media.length} medias
-          </p>
-        </div>
-        <CardContent className="p-6">
-          <h3 className="heading-font mb-3 text-xl font-semibold text-foreground sm:text-2xl">
-            {project.title}
-          </h3>
-          <p className="leading-relaxed text-muted-foreground">
-            {project.description}
-          </p>
-        </CardContent>
-      </Card>
+            <span className="absolute inset-0 flex items-center justify-center bg-black/35 text-sm font-semibold tracking-wide text-white">
+              VIDEO
+            </span>
+          </>
+        ) : (
+          <img
+            src={media.src}
+            alt={media.alt || project.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
+        <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      </button>
     );
   };
 
@@ -272,55 +133,96 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Collection 1 */}
+      {/* Projets */}
       <section className="px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-7xl">
-          <div className="mb-8 flex flex-col gap-2 sm:mb-10">
-            {/* [MODIF PORTFOLIO - TITRE LISTE 1] */}
-            <h2 className="heading-font text-3xl font-bold text-foreground sm:text-4xl">
-              Sélection de projets
-            </h2>
-            {/* [MODIF PORTFOLIO - TEXTE LISTE 1] */}
-            <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Une bibliothèque de projets cliquables, avec plusieurs vues (photos et vidéos) pour chaque réalisation.
-            </p>
-          </div>
+          <div className="space-y-14 sm:space-y-16">
+            {portfolioProjects.map((project, index) => (
+              <article
+                key={project.title}
+                className={`rounded-2xl border border-border/70 p-3 shadow-sm sm:p-4 ${index % 2 === 1 ? 'bg-muted/40' : 'bg-background'}`}
+              >
+                {index === 0 ? (
+                  <div className="grid grid-cols-1 gap-4 lg:grid-cols-[3fr_1fr] lg:gap-4">
+                    <div className="space-y-4">
+                      {renderMediaTile(project, project.media[0], 0, 'aspect-[16/10] w-full')}
 
-          <div className="mb-6 h-px w-full bg-gradient-to-r from-transparent via-border to-transparent sm:mb-8" />
+                      <div className="rounded-xl bg-background/85 p-4 sm:p-5">
+                        <h2 className="heading-font text-3xl font-bold text-foreground sm:text-4xl">
+                          {project.title}
+                        </h2>
+                        <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                          {project.description}
+                        </p>
+                        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-primary/80">
+                          Cliquez sur une image pour l\'ouvrir en grand
+                        </p>
+                      </div>
+                    </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
-            {collectionStudio.map((project, index) => renderProjectCard(project, index))}
+                    <div className="grid grid-cols-3 gap-3 sm:grid-cols-3 lg:grid-cols-1 lg:grid-rows-3 lg:gap-4">
+                      {project.media.slice(1, 4).map((media, mediaIndex) =>
+                        renderMediaTile(
+                          project,
+                          media,
+                          mediaIndex + 1,
+                          'aspect-[4/3] lg:h-full lg:min-h-[150px]'
+                        )
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 gap-4 lg:grid-cols-[3fr_1fr] lg:gap-4">
+                    <div className="space-y-4">
+                      {renderMediaTile(project, project.media[0], 0, 'aspect-[16/10] w-full')}
+
+                      <div className="grid grid-cols-3 gap-3">
+                        {project.media.slice(1, 4).map((media, mediaIndex) =>
+                          renderMediaTile(
+                            project,
+                            media,
+                            mediaIndex + 1,
+                            'aspect-[4/3]'
+                          )
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="rounded-xl bg-background/85 p-4 sm:p-5">
+                      <h2 className="heading-font text-3xl font-bold text-foreground sm:text-4xl lg:text-3xl">
+                        {project.title}
+                      </h2>
+                      <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-base">
+                        {project.description}
+                      </p>
+                      <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-primary/80">
+                        Cliquez sur une image pour l\'ouvrir en grand
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Collection 2 */}
-      <section className="bg-muted px-4 py-14 sm:py-16">
-        <div className="container mx-auto max-w-7xl">
-          <div className="mb-8 flex flex-col gap-2 sm:mb-10">
-            {/* [MODIF PORTFOLIO - TITRE LISTE 2] */}
-            <h2 className="heading-font text-3xl font-bold text-foreground sm:text-4xl">
-              Projets résidentiels
-            </h2>
-            {/* [MODIF PORTFOLIO - TEXTE LISTE 2] */}
-            <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Des projets résidentiels pensés sur mesure, chacun avec une galerie dédiée pour voir les détails et les différentes étapes.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
-            {collectionHabitat.map((project, index) => renderProjectCard(project, index, index === 0 ? 'md:col-span-2 xl:col-span-2' : ''))}
-          </div>
-        </div>
-      </section>
-
-      <Dialog open={isViewerOpen} onOpenChange={setIsViewerOpen}>
+      <Dialog
+        open={isViewerOpen}
+        onOpenChange={(open) => {
+          setIsViewerOpen(open);
+          if (!open) {
+            setSelectedProject(null);
+            setActiveMediaIndex(0);
+          }
+        }}
+      >
         <DialogContent className="w-[95vw] max-w-6xl overflow-hidden border-border/60 p-0">
           {selectedProject && (
             // [MODIF PORTFOLIO - FENÊTRE PROJET] Cette fenêtre s'ouvre quand tu cliques sur un projet.
             <div className="grid grid-cols-1 md:grid-cols-5">
               <div className="md:col-span-3">
-                <div className="aspect-[4/3] w-full bg-black/5">
+                <div className="aspect-[16/10] w-full bg-black/5">
                   {activeMedia?.type === 'video' ? (
                     <video
                       className="h-full w-full object-cover"
