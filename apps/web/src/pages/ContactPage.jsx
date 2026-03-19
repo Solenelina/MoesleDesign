@@ -100,7 +100,7 @@ const ContactPage = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-muted to-background px-4 py-16 sm:py-20 md:py-24">
+      <section className="relative bg-gradient-to-br from-muted to-background px-4 py-10 sm:py-14 md:py-16">
         <div className="container mx-auto max-w-4xl text-center">
           {/* [MODIF CONTACT - TITRE PRINCIPAL] */}
           <h1 className="heading-font mb-6 text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">

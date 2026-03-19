@@ -119,7 +119,7 @@ const PortfolioPage = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-muted to-background px-4 py-16 sm:py-20 md:py-24">
+      <section className="relative bg-gradient-to-br from-muted to-background px-4 py-10 sm:py-14 md:py-16">
         <div className="container mx-auto max-w-4xl text-center">
           {/* [MODIF PORTFOLIO - TITRE PRINCIPAL] */}
           <h1 className="heading-font mb-6 text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
@@ -136,67 +136,67 @@ const PortfolioPage = () => {
       {/* Projets */}
       <section className="px-4 py-14 sm:py-16">
         <div className="container mx-auto max-w-7xl">
-          <div className="space-y-14 sm:space-y-16">
+          <div className="space-y-10 sm:space-y-12">
             {portfolioProjects.map((project, index) => (
               <article
                 key={project.title}
-                className={`rounded-2xl border border-border/70 p-3 shadow-sm sm:p-4 ${index % 2 === 1 ? 'bg-muted/40' : 'bg-background'}`}
+                className={`rounded-2xl border border-border/70 p-2 shadow-sm sm:p-3 ${index % 2 === 1 ? 'bg-muted/40' : 'bg-background'}`}
               >
                 {index === 0 ? (
-                  <div className="grid grid-cols-1 gap-4 lg:grid-cols-[3fr_1fr] lg:gap-4">
-                    <div className="space-y-4">
-                      {renderMediaTile(project, project.media[0], 0, 'aspect-[16/10] w-full')}
+                  <div className="grid grid-cols-1 gap-3 lg:grid-cols-[3fr_1fr] lg:gap-3">
+                    <div className="space-y-3">
+                      {renderMediaTile(project, project.media[0], 0, 'aspect-[16/7] w-full')}
 
-                      <div className="rounded-xl bg-background/85 p-4 sm:p-5">
-                        <h2 className="heading-font text-3xl font-bold text-foreground sm:text-4xl">
+                      <div className="rounded-xl bg-background/85 p-3 sm:p-4">
+                        <h2 className="heading-font text-2xl font-bold text-foreground sm:text-3xl">
                           {project.title}
                         </h2>
-                        <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
                           {project.description}
                         </p>
-                        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-primary/80">
-                          Cliquez sur une image pour l\'ouvrir en grand
+                        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-primary/80">
+                          Cliquez sur une image pour l'ouvrir en grand
                         </p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3 sm:grid-cols-3 lg:grid-cols-1 lg:grid-rows-3 lg:gap-4">
+                    <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 lg:grid-cols-1 lg:grid-rows-3 lg:gap-3">
                       {project.media.slice(1, 4).map((media, mediaIndex) =>
                         renderMediaTile(
                           project,
                           media,
                           mediaIndex + 1,
-                          'aspect-[4/3] lg:h-full lg:min-h-[150px]'
+                          'aspect-[16/9] lg:h-full lg:min-h-[100px]'
                         )
                       )}
                     </div>
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 gap-4 lg:grid-cols-[3fr_1fr] lg:gap-4">
-                    <div className="space-y-4">
-                      {renderMediaTile(project, project.media[0], 0, 'aspect-[16/10] w-full')}
+                  <div className="grid grid-cols-1 gap-3 lg:grid-cols-[3fr_1fr] lg:gap-3">
+                    <div className="space-y-3">
+                      {renderMediaTile(project, project.media[0], 0, 'aspect-[16/7] w-full')}
 
-                      <div className="grid grid-cols-3 gap-3">
+                      <div className="grid grid-cols-3 gap-2">
                         {project.media.slice(1, 4).map((media, mediaIndex) =>
                           renderMediaTile(
                             project,
                             media,
                             mediaIndex + 1,
-                            'aspect-[4/3]'
+                            'aspect-[16/9]'
                           )
                         )}
                       </div>
                     </div>
 
-                    <div className="rounded-xl bg-background/85 p-4 sm:p-5">
-                      <h2 className="heading-font text-3xl font-bold text-foreground sm:text-4xl lg:text-3xl">
+                    <div className="rounded-xl bg-background/85 p-3 sm:p-4">
+                      <h2 className="heading-font text-2xl font-bold text-foreground sm:text-3xl lg:text-2xl">
                         {project.title}
                       </h2>
-                      <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-base">
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-sm">
                         {project.description}
                       </p>
-                      <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-primary/80">
-                        Cliquez sur une image pour l\'ouvrir en grand
+                      <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-primary/80">
+                        Cliquez sur une image pour l'ouvrir en grand
                       </p>
                     </div>
                   </div>

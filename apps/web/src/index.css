@@ -5,9 +5,22 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 15px;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   overflow-x: clip;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 @layer base {
